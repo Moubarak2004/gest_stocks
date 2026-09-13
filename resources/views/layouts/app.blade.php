@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Gestion de Stock') — StockPro</title>
-    <!-- Bootstrap 5 -->
-    <!-- Bootstrap Icons -->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Google Fonts -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">-->
-    <!-- CSS local (remplace Bootstrap, icônes et Google Fonts) -->
-    <!--  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  -->
+    <!-- CSS local -->
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-<link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <!--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     @stack('styles')
     <style>
         :root {
@@ -169,7 +162,6 @@
         }
         .autocomplete-item:hover { background: #f1f5f9; }
     </style>
-    @stack('styles')
 </head>
 <body>
 
@@ -337,14 +329,20 @@
     </div>
 </div>
 
+<!-- ============================================== -->
+<!-- SCRIPTS - CORRIGÉS (plus de <script> imbriqués) -->
+<!-- ============================================== -->
+
+<!-- Bootstrap JS local -->
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Sidebar toggle mobile -->
 <script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    // Sidebar toggle mobile
     document.getElementById('sidebarToggle')?.addEventListener('click', () => {
         document.getElementById('sidebar').classList.toggle('show');
     });
 </script>
+
 @stack('scripts')
 </body>
 </html>
