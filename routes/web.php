@@ -124,5 +124,12 @@ Route::get('/debug-session-xk9q', function () {
             }
         })(),
         'current_request_session_id' => request()->cookie(config('session.cookie')) ? 'cookie présent' : 'aucun cookie reçu',
+        'my_session_id' => session()->getId(),
+        'my_hits_this_session' => (function () {
+            $hits = session('debug_hits', 0) + 1;
+            session()->put('debug_hits', $hits);
+            session()->save();
+            return $hits;
+        })(),
     ]);
 });
