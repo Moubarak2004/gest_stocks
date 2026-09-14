@@ -66,6 +66,7 @@
         <i class="bi bi-x-octagon me-2"></i>Articles en rupture de stock ({{ $articlesRupture->count() }})
     </div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>Article</th><th>Référence</th><th>Catégorie</th><th>Stock actuel</th><th>Seuil</th><th>Actions</th></tr></thead>
             <tbody>
@@ -84,6 +85,7 @@
             @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 @endif
@@ -95,6 +97,7 @@
         <i class="bi bi-exclamation-triangle me-2"></i>Articles sous le seuil d'alerte ({{ $articlesAlerte->count() }})
     </div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>Article</th><th>Référence</th><th>Stock</th><th>Seuil</th><th>Actions</th></tr></thead>
             <tbody>
@@ -111,6 +114,7 @@
             @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 @endif
@@ -121,6 +125,7 @@
         <i class="bi bi-clock-history me-2"></i>Historique des alertes
     </div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>Article</th><th>Type</th><th>Stock</th><th>Seuil</th><th>Date</th><th>Statut</th><th>Actions</th></tr></thead>
             <tbody>
@@ -161,6 +166,7 @@
             @endforelse
             </tbody>
         </table>
+        </div>
         <div class="px-3 py-2">{{ $alertes->links() }}</div>
     </div>
 </div>

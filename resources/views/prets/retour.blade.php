@@ -46,6 +46,7 @@ blade
     <div class="card">
         <div class="card-header bg-white py-3">Informations</div>
         <div class="card-body">
+            <div class="table-responsive">
             <table class="table table-sm">
                 <tr><th>N° prêt</th><td>{{ $pret->numero }}</td></tr>
                 <tr><th>Article</th><td>{{ $pret->article->nom }} ({{ $pret->article->reference }})</td></tr>
@@ -57,6 +58,7 @@ blade
                 <tr><th>Statut</th><td><span class="badge bg-{{ $pret->statut === 'rendu' ? 'success' : ($pret->statut === 'en_cours' ? 'info' : 'secondary') }}">{{ ucfirst($pret->statut) }}</span></td></tr>
                 <tr><th>Enregistré par</th><td>{{ $pret->user->name ?? '-' }}</td></tr>
             </table>
+            </div>
             @if($pret->notes)
             <hr><strong>Notes :</strong> {{ $pret->notes }}
             @endif

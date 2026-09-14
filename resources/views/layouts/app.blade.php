@@ -18,7 +18,7 @@
             --sidebar-text: #94a3b8;
             --sidebar-active: #2563eb;
         }
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; }
+        body { font-family: 'Inter', sans-serif; background: #f1f5f9; overflow-x: hidden; }
 
         /* Sidebar */
         #sidebar {
@@ -281,9 +281,9 @@
             </a>
             <!-- Menu déroulant du profil -->
             <div class="dropdown">
-                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle"></i> {{ auth()->user()->name }}
-                    <span class="badge bg-secondary">{{ ucfirst(auth()->user()->role) }}</span>
+                <button class="btn btn-light dropdown-toggle text-truncate" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 55vw;">
+                    <i class="bi bi-person-circle"></i> <span class="d-none d-sm-inline">{{ auth()->user()->name }}</span>
+                    <span class="badge bg-secondary d-none d-md-inline">{{ ucfirst(auth()->user()->role) }}</span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="bi bi-person"></i> Mon profil</a></li>

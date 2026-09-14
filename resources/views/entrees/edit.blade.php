@@ -41,6 +41,7 @@
 <div class="card border mb-3">
     <div class="card-header bg-light py-2 fw-semibold">Articles reçus (non modifiables)</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-sm mb-0">
             <thead class="table-light">
                 <tr><th>Article</th><th>Référence</th><th>Qté</th><th>Prix unit.</th><th>Montant</th></tr>
@@ -62,6 +63,7 @@
                 </tr>
             </tfoot>
         </table>
+        </div>
     </div>
 </div>
 

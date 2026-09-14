@@ -29,6 +29,7 @@
         <div class="card">
             <div class="card-header bg-white py-3">Informations</div>
             <div class="card-body">
+                <div class="table-responsive">
                 <table class="table table-sm mb-0">
                     <tr><td class="text-muted">Catégorie</td><td>{{ $article->categorie->nom ?? '-' }}</td></tr>
                     <tr><td class="text-muted">Fournisseur</td><td>{{ $article->fournisseur->nom ?? '-' }}</td></tr>
@@ -45,6 +46,7 @@
                     <tr><td class="text-muted">Seuil alerte</td><td>{{ $article->stock_minimum }} {{ $article->unite }}</td></tr>
                     <tr><td class="text-muted">Valeur stock</td><td class="fw-semibold text-primary">{{ number_format($article->valeur_stock, 0, ',', ' ') }} F</td></tr>
                 </table>
+                </div>
             </div>
         </div>
         <div class="mt-3 d-flex gap-2">
@@ -61,6 +63,7 @@
                 <i class="bi bi-clock-history me-2 text-info"></i>Historique des mouvements
             </div>
             <div class="card-body p-0">
+                <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead>
                         <tr><th>Date</th><th>Type</th><th>Quantité</th><th>Avant</th><th>Après</th><th>Référence</th><th>Par</th></tr>
@@ -89,6 +92,7 @@
                     @endforelse
                     </tbody>
                 </table>
+                </div>
                 <div class="px-3 py-2">{{ $mouvements->links() }}</div>
             </div>
         </div>

@@ -47,6 +47,7 @@
 <div class="card border mt-3">
     <div class="card-header bg-light py-2 small fw-semibold">Articles (non modifiables après création)</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-sm mb-0">
             <thead><tr><th>Article</th><th>Qté</th><th>Prix unit.</th><th>Montant</th></tr></thead>
             <tbody>
@@ -60,6 +61,7 @@
             @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 

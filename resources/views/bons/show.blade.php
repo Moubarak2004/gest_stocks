@@ -8,6 +8,7 @@
     <div class="card mb-3">
         <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-info-circle me-2"></i>Informations</div>
         <div class="card-body">
+            <div class="table-responsive">
             <table class="table table-sm mb-0">
                 <tr><td class="text-muted">N° Bon</td><td class="fw-bold text-primary">{{ $bon->numero }}</td></tr>
                 <tr><td class="text-muted">Date commande</td><td>{{ $bon->date_commande->format('d/m/Y') }}</td></tr>
@@ -23,6 +24,7 @@
                 <tr><td class="text-muted">Créé par</td><td>{{ $bon->user->name ?? '-' }}</td></tr>
                 <tr><td class="text-muted">Date saisie</td><td>{{ $bon->created_at->format('d/m/Y H:i') }}</td></tr>
             </table>
+            </div>
         </div>
     </div>
     @if($bon->notes)
@@ -67,6 +69,7 @@
     <div class="card mb-3">
         <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-list-ul me-2"></i>Articles commandés</div>
         <div class="card-body p-0">
+            <div class="table-responsive">
             <table class="table mb-0">
                 <thead><tr><th>Article</th><th>Commandé</th><th>Reçu</th><th>Reste</th><th>Prix unit.</th><th>Montant</th></tr></thead>
                 <tbody>
@@ -92,6 +95,7 @@
                     </tr>
                 </tfoot>
             </table>
+            </div>
         </div>
     </div>
 
@@ -105,6 +109,7 @@
             <form action="{{ route('bons.receptionner', $bon) }}" method="POST">
                 @csrf
                 <p class="text-muted small mb-3">Saisissez les quantités réellement reçues pour chaque article :</p>
+                <div class="table-responsive">
                 <table class="table table-sm mb-3">
                     <thead><tr><th>Article</th><th>Commandé</th><th>Déjà reçu</th><th>Qté à réceptionner</th></tr></thead>
                     <tbody>
@@ -128,6 +133,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                </div>
                 <button type="submit" class="btn btn-success">
                     <i class="bi bi-check-circle me-1"></i>Valider la réception
                 </button>
@@ -141,4 +147,3 @@
     <i class="bi bi-printer me-1"></i> PDF
 </a>
 @endsection
-

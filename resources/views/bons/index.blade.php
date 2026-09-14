@@ -38,6 +38,7 @@
 
 <div class="card">
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead>
                 <tr>
@@ -80,6 +81,7 @@
             @endforelse
             </tbody>
         </table>
+        </div>
         <div class="px-3 py-2">{{ $bons->links() }}</div>
     </div>
 </div>

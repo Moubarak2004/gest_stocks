@@ -10,6 +10,7 @@
                 <i class="bi bi-info-circle me-2 text-primary"></i> Informations
             </div>
             <div class="card-body">
+                <div class="table-responsive">
                 <table class="table table-sm">
                     <tr><th>N° prêt</th><td>{{ $pret->numero }}</td></tr>
                     <tr><th>Article</th><td>{{ $pret->article->nom }} ({{ $pret->article->reference }})</td></tr>
@@ -30,6 +31,7 @@
                     </tr>
                     <tr><th>Enregistré par</th><td>{{ $pret->user->name ?? '-' }}</td></tr>
                 </table>
+                </div>
                 @if($pret->notes)
                     <hr>
                     <strong>Notes :</strong> {{ nl2br(e($pret->notes)) }}

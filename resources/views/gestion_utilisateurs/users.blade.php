@@ -11,6 +11,7 @@
 </div>
 <div class="card">
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>Nom</th><th>Email</th><th>Téléphone</th><th>Rôle</th><th>Statut</th><th class="text-end">Actions</th></tr></thead>
             <tbody>
@@ -47,7 +48,7 @@
             @endforelse
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 @endsection
-

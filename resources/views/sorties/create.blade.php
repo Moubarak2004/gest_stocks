@@ -44,6 +44,7 @@
 <div class="card border mb-3">
     <div class="card-header bg-light py-2 fw-semibold">Articles</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table mb-0">
             <thead class="table-light">
                 <tr>
@@ -63,6 +64,7 @@
                 </tr>
             </tfoot>
         </table>
+        </div>
     </div>
     <div class="card-footer bg-white">
         <button type="button" class="btn btn-outline-danger btn-sm" onclick="ajouterLigne()">

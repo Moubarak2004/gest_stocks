@@ -8,6 +8,7 @@
     <div class="card mb-3">
         <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-info-circle me-2"></i>Informations</div>
         <div class="card-body">
+            <div class="table-responsive">
             <table class="table table-sm mb-0">
                 <tr><td class="text-muted">N° Entrée</td><td class="fw-bold text-success">{{ $entree->numero }}</td></tr>
                 <tr><td class="text-muted">Date</td><td>{{ $entree->date_entree->format('d/m/Y') }}</td></tr>
@@ -23,6 +24,7 @@
                 <tr><td class="text-muted">Créé par</td><td>{{ $entree->user->name ?? '-' }}</td></tr>
                 <tr><td class="text-muted">Date saisie</td><td>{{ $entree->created_at->format('d/m/Y H:i') }}</td></tr>
             </table>
+            </div>
         </div>
     </div>
     @if($entree->notes)
@@ -35,6 +37,7 @@
     <div class="card">
         <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-list-ul me-2"></i>Articles reçus</div>
         <div class="card-body p-0">
+            <div class="table-responsive">
             <table class="table mb-0">
                 <thead><tr><th>Article</th><th>Référence</th><th>Qté</th><th>Prix unit.</th><th>Montant</th></tr></thead>
                 <tbody>
@@ -55,6 +58,7 @@
                     </tr>
                 </tfoot>
             </table>
+            </div>
         </div>
     </div>
     <div class="mt-3 d-flex gap-2">

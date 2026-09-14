@@ -46,6 +46,7 @@
 <div class="card">
     <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-list-ul me-2"></i>Détail des entrées</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>N° Entrée</th><th>Date</th><th>Fournisseur</th><th>Réf. bon</th><th>Montant</th><th>Par</th></tr></thead>
             <tbody>
@@ -74,6 +75,7 @@
             </tfoot>
             @endif
         </table>
+        </div>
     </div>
 </div>
 <div class="mt-3">
@@ -82,4 +84,3 @@
     </a>
 </div>
 @endsection
-

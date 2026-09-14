@@ -48,6 +48,7 @@
 <div class="card mb-3">
     <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-trophy text-warning me-2"></i>Top articles vendus</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table mb-0">
             <thead><tr><th>#</th><th>Article</th><th>Référence</th><th>Qté vendue</th><th>Chiffre d'affaires</th></tr></thead>
             <tbody>
@@ -62,6 +63,7 @@
             @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 @endif
@@ -70,6 +72,7 @@
 <div class="card">
     <div class="card-header bg-white py-3 fw-semibold"><i class="bi bi-list-ul me-2"></i>Détail des ventes</div>
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead><tr><th>N° Sortie</th><th>Date</th><th>Client</th><th>Type</th><th>Montant</th><th>Remise</th><th>Net</th><th>Par</th></tr></thead>
             <tbody>
@@ -100,6 +103,7 @@
             </tfoot>
             @endif
         </table>
+        </div>
     </div>
 </div>
 <div class="mt-3">

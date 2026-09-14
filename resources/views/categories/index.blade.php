@@ -3,9 +3,9 @@
 @section('page-title', 'Catégories')
 
 @section('content')
-<div class="d-flex justify-content-between mb-3">
-    <form method="GET" action="{{ route('categories.index') }}" class="d-flex gap-2">
-        <input type="text" name="search" class="form-control" placeholder="Nom, code, description..." value="{{ request('search') }}" style="width: 250px">
+<div class="d-flex justify-content-between flex-wrap gap-2 mb-3">
+    <form method="GET" action="{{ route('categories.index') }}" class="d-flex flex-wrap gap-2">
+        <input type="text" name="search" class="form-control" placeholder="Nom, code, description..." value="{{ request('search') }}" style="min-width: 180px; flex: 1 1 220px;">
         <button class="btn btn-primary">Rechercher</button>
         <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary">Reset</a>
     </form>
@@ -22,6 +22,7 @@
 
 <div class="card">
     <div class="card-body p-0">
+        <div class="table-responsive">
         <table class="table table-hover mb-0">
             <thead>
                 <tr>
@@ -72,6 +73,7 @@
                 @endforelse
             </tbody>
         </table>
+        </div>
         <div class="px-3 py-2">
             {{ $categories->links() }}
         </div>
