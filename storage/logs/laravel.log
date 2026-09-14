@@ -183,3 +183,11 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2026-09-13 22:40:44] local.ERROR: Cannot declare class App\Models\EntreeDetail, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Models\\EntreeDetail, because the name is already in use at C:/Users/PC-CONASUR/Downloads/gest_stocks/app/Models/EntreeDetail.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2026-09-14 08:03:48] local.ERROR: Cannot declare class App\Models\EntreeDetail, because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot declare class App\\Models\\EntreeDetail, because the name is already in use at C:/Users/PC-CONASUR/Downloads/gest_stocks/app/Models/EntreeDetail.php:7)
+[stacktrace]
+#0 {main}
+"} 

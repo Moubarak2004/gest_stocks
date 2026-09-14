@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
     <title><?php echo $__env->yieldContent('title', 'Gestion de Stock'); ?> — StockPro</title>
-    <!-- Bootstrap 5 -->
-    <!-- Bootstrap Icons -->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- Google Fonts -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">-->
-    <!-- CSS local (remplace Bootstrap, icônes et Google Fonts) -->
-    <!--  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">  -->
+    <!-- CSS local -->
     <link href="<?php echo e(asset('vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
-<link href="<?php echo e(asset('vendor/bootstrap-icons/bootstrap-icons.css')); ?>" rel="stylesheet">
-  <!--  <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">-->
+    <link href="<?php echo e(asset('vendor/bootstrap-icons/bootstrap-icons.css')); ?>" rel="stylesheet">
     <?php echo $__env->yieldPushContent('styles'); ?>
     <style>
         :root {
@@ -25,7 +18,7 @@
             --sidebar-text: #94a3b8;
             --sidebar-active: #2563eb;
         }
-        body { font-family: 'Inter', sans-serif; background: #f1f5f9; }
+        body { font-family: 'Inter', sans-serif; background: #f1f5f9; overflow-x: hidden; }
 
         /* Sidebar */
         #sidebar {
@@ -169,7 +162,6 @@
         }
         .autocomplete-item:hover { background: #f1f5f9; }
     </style>
-    <?php echo $__env->yieldPushContent('styles'); ?>
 </head>
 <body>
 
@@ -290,10 +282,9 @@
             </a>
             <!-- Menu déroulant du profil -->
             <div class="dropdown">
-                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="bi bi-person-circle"></i> <?php echo e(auth()->user()->name); ?>
-
-                    <span class="badge bg-secondary"><?php echo e(ucfirst(auth()->user()->role)); ?></span>
+                <button class="btn btn-light dropdown-toggle text-truncate" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 55vw;">
+                    <i class="bi bi-person-circle"></i> <span class="d-none d-sm-inline"><?php echo e(auth()->user()->name); ?></span>
+                    <span class="badge bg-secondary d-none d-md-inline"><?php echo e(ucfirst(auth()->user()->role)); ?></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="<?php echo e(route('profile')); ?>"><i class="bi bi-person"></i> Mon profil</a></li>
@@ -341,14 +332,20 @@
     </div>
 </div>
 
+<!-- ============================================== -->
+<!-- SCRIPTS - CORRIGÉS (plus de <script> imbriqués) -->
+<!-- ============================================== -->
+
+<!-- Bootstrap JS local -->
+<script src="<?php echo e(asset('vendor/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
+
+<!-- Sidebar toggle mobile -->
 <script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="<?php echo e(asset('vendor/bootstrap/js/bootstrap.bundle.min.js')); ?>"></script>
-    // Sidebar toggle mobile
     document.getElementById('sidebarToggle')?.addEventListener('click', () => {
         document.getElementById('sidebar').classList.toggle('show');
     });
 </script>
+
 <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 </html><?php /**PATH C:\Users\PC-CONASUR\Downloads\gest_stocks\resources\views/layouts/app.blade.php ENDPATH**/ ?>

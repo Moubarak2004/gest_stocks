@@ -134,6 +134,7 @@
                 <i class="bi bi-trophy text-warning me-2"></i>Top articles vendus ce mois
             </div>
             <div class="card-body p-0">
+                <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead><tr><th>Article</th><th>Qté</th><th>CA</th></tr></thead>
                     <tbody>
@@ -151,6 +152,7 @@
                     <?php endif; ?>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -162,6 +164,7 @@
                 <i class="bi bi-clock-history text-info me-2"></i>Derniers mouvements
             </div>
             <div class="card-body p-0">
+                <div class="table-responsive">
                 <table class="table table-hover mb-0">
                     <thead><tr><th>Article</th><th>Type</th><th>Qté</th><th>Date</th></tr></thead>
                     <tbody>
@@ -188,6 +191,7 @@
                     <?php endif; ?>
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -195,9 +199,8 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('scripts'); ?>
+<script src="<?php echo e(asset('vendor/chartjs/chart.min.js')); ?>"></script>
 <script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
-    <script src="<?php echo e(asset('vendor/chartjs/chart.min.js')); ?>"></script>
 const ctx = document.getElementById('chartMouvements').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
@@ -226,5 +229,4 @@ new Chart(ctx, {
 });
 </script>
 <?php $__env->stopPush(); ?>
-
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\PC-CONASUR\Downloads\gest_stocks\resources\views/dashboard/index.blade.php ENDPATH**/ ?>
