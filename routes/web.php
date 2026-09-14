@@ -95,3 +95,34 @@ Route::put('/profil/mot-de-passe', [AuthController::class, 'updatePassword'])->n
         });
     });
 });
+// ROUTE DE DIAGNOSTIC TEMPORAIRE — À SUPPRIMER APRÈS DEBUG
+Route::get('/debug-session-xk9q', function () {
+    return response()->json([
+        'session_driver'      => config('session.driver'),
+        'session_connection'  => config('session.connection') ?? 'default (' . config('database.default') . ')',
+        'app_key_present'     => !empty(config('app.key')),
+        'db_connection_ok'    => (function () {
+            try {
+                \DB::connection()->getPdo();
+                return true;
+            } catch (\Throwable $e) {
+                return 'ERREUR: ' . $e->getMessage();
+            }
+        })(),
+        'sessions_table_count'=> (function () {
+            try {
+                return \DB::table('sessions')->count();
+            } catch (\Throwable $e) {
+                return 'ERREUR: ' . $e->getMessage();
+            }
+        })(),
+        'latest_session'      => (function () {
+            try {
+                return \DB::table('sessions')->orderByDesc('last_activity')->first();
+            } catch (\Throwable $e) {
+                return 'ERREUR: ' . $e->getMessage();
+            }
+        })(),
+        'current_request_session_id' => request()->cookie(config('session.cookie')) ? 'cookie présent' : 'aucun cookie reçu',
+    ]);
+});
